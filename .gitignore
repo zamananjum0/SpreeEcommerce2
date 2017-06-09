@@ -12,4 +12,4 @@ dump.rdb
 /log/sidekiq.log
 /app/jobs/test_email.rb
 /db/schema.rb
-
+/tmp
