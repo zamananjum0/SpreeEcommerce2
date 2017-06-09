@@ -1,0 +1,11 @@
+<% content_for :sidebar_left do %>
+  <%= render partial: 'spree/shared/sidebar_left' %>
+<% end %>
+
+<% content_for :sidebar_right do %>
+  <%= render partial: 'spree/shared/sidebar_right' %>
+<% end %>
+
+<div class="center_content" data-hook="homepage_products">
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+</div>

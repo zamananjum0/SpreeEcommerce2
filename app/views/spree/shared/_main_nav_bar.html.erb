@@ -1,0 +1,24 @@
+<nav id="menu_tab" data-hook="main-nav">
+  <div class="left_menu_corner"></div>
+  <ul class="menu">
+    <li><%= link_to Spree.t(:home), spree.root_path, class: "nav1" %></li>
+    <li class="divider"></li>
+    <li><a href="#" class="nav2">Products</a></li>
+    <li class="divider"></li>
+    <li><a href="#" class="nav3">Specials</a></li>
+    <li class="divider"></li>
+    <li><a href="#" class="nav4">My account</a></li>
+    <li class="divider"></li>
+    <li><a href="#" class="nav4">Sign Up</a></li>
+    <li class="divider"></li>
+    <li><a href="#" class="nav5">Shipping</a></li>
+    <li class="divider"></li>
+    <li><a href="contact.html" class="nav6">Contact Us</a></li>
+    <li class="divider"></li>
+    <li class="currencies" data-hook>
+      <%= link_to_cart %>
+    </li>
+    <script>Spree.fetch_cart()</script>
+  </ul>
+  <div class="right_menu_corner"></div>
+</nav>

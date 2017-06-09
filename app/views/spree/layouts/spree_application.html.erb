@@ -1,0 +1,31 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+<head data-hook="inside_head">
+  <%= render partial: 'spree/shared/head' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body data-hook="body">
+  <div id="main_container">
+      <%= render partial: 'spree/shared/top_bar'%>
+      <header id="header">
+        <div id="logo"><%= logo %></div>
+        <%= render partial: 'spree/shared/slide_product'%>
+      </header>
+
+      <main id="main-content">
+        <%= render partial: 'spree/shared/main_nav_bar'%>
+        <%= breadcrumbs(@taxon) %>
+        <%= flash_messages %>
+        <%= yield :sidebar_left %>
+        <%= yield %>
+        <%= yield :sidebar_right %>
+      </main>
+
+      <%= render partial: 'spree/shared/footer'%>
+  </div>
+</body>
+</html>

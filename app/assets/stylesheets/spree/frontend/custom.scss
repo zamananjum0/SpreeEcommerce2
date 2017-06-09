@@ -1,0 +1,19 @@
+
+.list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.title_bar {
+  clear: both;
+  display: block;
+  height: 33px;
+  width: 100%;
+  font-size: 12px;
+  color: #847676;
+  font-weight: bold;
+  line-height: 33px;
+  background-color: #f7f3f3;
+  box-shadow: inset 0 -1px #e0e0e0;
+  border-radius: 5px;
+  padding: 0 15px;
+}

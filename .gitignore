@@ -1,0 +1,15 @@
+/.bundle
+/vendor/bundle
+/config/database.yml
+/log/capistrano.log
+/log/development.log
+/log/bullet.log
+/log/newrelic_agent.log
+dump.rdb
+/uploads/uploads/tmp
+/uploads/images
+/uploads/attachments
+/log/sidekiq.log
+/app/jobs/test_email.rb
+/db/schema.rb
+
