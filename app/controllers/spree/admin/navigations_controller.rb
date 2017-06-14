@@ -1,10 +1,12 @@
 module Spree
   module Admin
-    class NavigationsController < Spree::Admin::BaseController
-      def index
-        @navigations = Spree::Admin::Navigation.all
-      end
+    class NavigationsController < ResourceController
+      before_action :to_slug, only: [:update, :create]
+      private
+
+        def to_slug
+          params[:slug] = params[:name].parameterize if params[:name].present?
+        end
     end
   end
 end
-

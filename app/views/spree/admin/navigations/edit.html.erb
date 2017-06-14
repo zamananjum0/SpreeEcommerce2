@@ -1,0 +1,15 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:navigations), spree.admin_navigations_url %> /
+  <%= @navigation.name %>
+<% end %>
+<%= form_for [:admin, @navigation] do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: { f: f } %>
+
+    <div class="form-actions">
+      <%= button Spree.t('actions.update'), 'ok', 'submit', { class: 'btn-success' } %>
+      <span class="or"><%= Spree.t(:or) %></span>
+      <%= button_link_to Spree.t('actions.cancel'), admin_navigations_path, icon: 'delete' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -11,6 +11,10 @@ end
 
 Spree::Core::Engine.routes.draw do
   namespace :admin, path: Spree.admin_path do
-    resources :navigations
+    resources :navigations do
+      collection do
+        post :update_positions
+      end
+    end
   end
 end
