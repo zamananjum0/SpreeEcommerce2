@@ -1,15 +1,9 @@
 module Spree
   module Admin
-    class NavigationsController < ResourceController
-
+    class NavigationsController < Spree::Admin::BaseController
       def index
-        session[:return_to] = request.url
-        respond_with(@collection)
+        @navigations = Spree::Admin::Navigation.all
       end
-
-      def new
-      end
-
     end
   end
 end
