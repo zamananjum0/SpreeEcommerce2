@@ -23,4 +23,7 @@ en:
   spree:
     navigation: Navigation
     new_navigation: New Navigation
+    link: Link
+    class_attr: Class attributes
+    before_element: Before element tag
 

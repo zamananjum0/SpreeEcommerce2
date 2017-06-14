@@ -1,0 +1,20 @@
+<% content_for :foot do %>
+  <%= javascript_tag "
+    $(document).ready(function() {
+      var slug = function(str) {
+          var $slug = '';
+          var trimmed = $.trim(str);
+          $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+          replace(/-+/g, '-').
+          replace(/^-|-$/g, '');
+          return $slug.toLowerCase();
+      }
+
+      $('#navigation_name').keyup(function() {
+        var clean_text = slug($(this).val());
+        $('#navigation_slug').val(clean_text);  
+      });
+    });
+    "
+  %>
+<% end %>
