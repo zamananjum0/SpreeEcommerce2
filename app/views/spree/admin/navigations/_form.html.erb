@@ -20,6 +20,11 @@
       <% end %>
     </div>
     <div class="col-md-6">
+      <%= f.field_container :position, class: ['form-group'] do %>
+        <%= f.label :position, Spree.t(:position) %>
+        <%= f.text_field :position, class: 'form-control', disabled: true %>
+        <%= f.error_message_on :position, class: 'error-message' %>
+      <% end %>
       <%= f.field_container :html_class, class: ['form-group'] do %>
         <%= f.label :html_class, Spree.t(:class_attr) %>
         <%= f.text_field :html_class, class: 'form-control' %>
@@ -34,4 +39,3 @@
   </div>
 </div>
 <%= render partial: 'js_foot' %>
-

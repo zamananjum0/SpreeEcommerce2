@@ -2,7 +2,6 @@
   <%= link_to Spree.t(:navigations), spree.admin_navigations_url %> /
   <%= @navigation.name %>
 <% end %>
-
 <%= form_for [:admin, @navigation] do |f| %>
   <fieldset>
     <%= render partial: 'form', locals: { f: f } %>
