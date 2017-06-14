@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 end
 
 Spree::Core::Engine.routes.draw do
-  namespace :admin do
+  namespace :admin, path: Spree.admin_path do
     resources :navigations
   end
 end

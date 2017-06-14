@@ -1,46 +1,18 @@
 <% content_for :page_title do %>
-  <%= plural_resource_name(Spree::Navigation) %>
+  <%= plural_resource_name(Spree::Admin::Navigation) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:new_navigation), new_admin_navigation_url, class: "btn-success", icon: 'add', id: 'admin_new_navigation' %>
-<% end if can? :create, Spree::Navigation %>
+  <%= button_link_to Spree.t(:new_navigation), spree.new_admin_navigation_path, class: "btn-success", icon: 'add', id: 'admin_new_navigation_link' %>
+<% end %>
 
-<% if @collection.any? %>
-  <table class="table" id="listing_navs">
-    <thead>
-      <tr data-hook="admin_navs_index_headers">
-        <th><%= Spree.t(:sku) %></th>
-        <th><%= Spree.t(:status) %></th>
-
-        <th colspan="2"><%= sort_link @search,:name, Spree.t(:name), { default_order: "desc" }, {title: 'admin_navs_listing_name_title'} %></th>
-        <th class="text-center">
-          <%= sort_link @search, :master_default_price_amount, Spree.t(:master_price), {}, {title: 'admin_navs_listing_price_title'} %>
-        </th>
-        <th data-hook="admin_navs_index_header_actions" class="actions"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @collection.each do |nav| %>
-          <tr <%== "style='color: red;'" if nav.deleted? %> id="<%= spree_dom_id nav %>" data-hook="admin_navs_index_rows" class="<%= cycle('odd', 'even') %>">
-            <td class="sku"></td>
-            <td class="status"></td>
-            <td class="image"></td>
-            <td><%= link_to nav.try(:name), edit_admin_navigation_path(nav) %></td>
-            <td class="text-center"></td>
-            <td class="actions actions-3 text-right" data-hook="admin_navs_index_row_actions">
-              <%= link_to_edit nav, no_text: true, class: 'edit' if can?(:edit, nav) && !nav.deleted? %>
-              <%= link_to_clone nav, no_text: true, class: 'clone' if can?(:clone, nav) %>
-              <%= link_to_delete nav, no_text: true if can?(:delete, nav) && !nav.deleted? %>
-            </td>
-          </tr>
-      <% end %>
-    </tbody>
-  </table>
+<% if @navigations.any? %>
+  <div id="list-navigations" data-hook>
+    <%= render 'list' %>
+  </div>
 <% else %>
   <div class="alert alert-info no-objects-found">
     <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::Navigation)) %>,
-    <%= link_to Spree.t(:add_one), new_object_url %>!
+    <%= link_to Spree.t(:add_one), spree.new_admin_navigation_path %>!
   </div>
 <% end %>
-

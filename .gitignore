@@ -13,3 +13,4 @@ dump.rdb
 /app/jobs/test_email.rb
 /db/schema.rb
 /tmp
+/tmp/cache
