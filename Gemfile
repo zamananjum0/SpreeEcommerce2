@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
-gem 'pg'
+gem 'pg', '~> 0.20.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -56,3 +56,4 @@ gem 'spree_auth_devise', '~> 3.2.0.beta'
 gem 'spree_gateway', '~> 3.2.0.beta'
 gem 'nokogiri', '~> 1.7', '>= 1.7.2'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: 'master'

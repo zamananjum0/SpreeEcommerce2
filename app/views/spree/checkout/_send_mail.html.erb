@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12" data-hook="send_mail_for_gif">
+    <div class="panel panel-default" id="billing" data-hook>
+      <%= form.fields_for :send_mail do |send_mail_form| %>
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= Spree.t(:send_mail) %></h3>
+        </div>
+        <div class="panel-body">
+          <%= form.text_field :email, class: 'form-control required' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="well text-right form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success' %>
+</div>
