@@ -27,4 +27,6 @@ en:
     position: Position
     class_attr: Class attributes
     before_element: Before element tag
+    order_state:
+      send_mail: Send mail
 
